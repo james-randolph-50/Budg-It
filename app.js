@@ -10,8 +10,13 @@ const budgetController = (function() {
 const UIController = (function() {
 
     return {
-        getinput: function() {
-            let type = document.querySelector.apply('.add__type').value;
+        getInput: function() {
+            return {
+                 type: document.querySelector.apply('.add__type').value,
+                 description: document.querySelector('.add__description').value,
+                 value: document.querySelector('.add__value').value
+            }
+
         }
     };
 
