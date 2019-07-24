@@ -1,22 +1,21 @@
 // BUDGET CONTROLLER/MODULE
 
-const budgetController = (function() {
+var budgetController = (function() {
 
     
 })();
 
 // UI CONTROLLER/MODULE
 
-const UIController = (function() {
+var UIController = (function() {
 
     return {
         getInput: function() {
             return {
-                 type: document.querySelector.apply('.add__type').value,
+                 type: document.querySelector('.add__type').value,
                  description: document.querySelector('.add__description').value,
                  value: document.querySelector('.add__value').value
-            }
-
+            };
         }
     };
 
@@ -24,9 +23,13 @@ const UIController = (function() {
 
 // APP CONTROLLER
 
-const controller = (function(budgetCtrl, UICtrl) {
+var controller = (function(budgetCtrl, UICtrl) {
 
     let ctrlAddItem = function() {
+
+        // Get the field data
+        let input = UICtrl.getInput();
+        console.log(input);
 
     }
 
