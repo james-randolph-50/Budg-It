@@ -15,4 +15,15 @@ const UIController = (function() {
 
 const controller = (function(budgetCtrl, UICtrl) {
 
+    document.querySelector('.add__btn').addEventListener('click', function() {
+
+    });
+
+    document.addEventListener('keypress', function(event) {
+
+        if (event.keyCode === 13) {
+            
+        }
+    });
+
 })(budgetController, UIController);
