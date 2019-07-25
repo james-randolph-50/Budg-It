@@ -149,6 +149,27 @@ const UIController = (function() {
         expensesPercLabel: '.item__percentage'
     };
 
+    
+    var formatNumber = function(num, type) {
+        var numSplit, int, dec, type;
+
+
+        num = Math.abs(num);
+        num = num.toFixed(2);
+
+        numSplit = num.split('.');
+
+        int = numSplit[0];
+        if (int.length > 3) {
+            int = int.substr(0, int.length - 3) + ',' + int.substr(int.length - 3, 3); //input 23510, output 23,510
+        }
+
+        dec = numSplit[1];
+
+        return (type === 'exp' ? '-' : '+') + ' ' + int + '.' + dec;
+
+    };
+
     return {
         getInput: function() {
             return {
@@ -175,7 +196,7 @@ const UIController = (function() {
 
             newHtml = html.replace('%id%', obj.id);
             newHtml = newHtml.replace('%description%', obj.description);
-            newHtml = newHtml.replace('%value%', obj.value);
+            newHtml = newHtml.replace('%value%', formatNumber(obj.value, type));
 
             // Insert HTML into the DOM
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
@@ -233,23 +254,6 @@ const UIController = (function() {
                     current.textContent = '---';
                 }
             });
-        },
-
-        formatNumber: function(num, type) {
-            let numSplit, inc, dec;
-
-            num = Math.abs(num);
-            num = num.toFixed(2);
-
-            numSplit = num.split('.');
-
-            int = numSplit[0];
-            if (int.length > 3) {
-                int = int.substr(0, int.length - 3) + ',' + int.substr(int.length - 3, int.length);
-            }
-
-            dec = numSplit[1];
-
         },
 
         getDOMstrings: function() {
