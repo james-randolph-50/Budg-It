@@ -31,7 +31,7 @@ const budgetController = (function() {
 
             // Create new ID
             if (data.allItems[type].length > 0) {
-                ID = data.allItems[type][data.allItem[type].length - 1].id
+                ID = data.allItems[type][data.allItems[type].length - 1].id
             } else {
                 ID = 0;
             }
