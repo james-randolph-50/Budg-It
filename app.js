@@ -99,6 +99,17 @@ const UIController = (function() {
 
         },
 
+        clearFields: function() {
+            let fields, fieldsArray;
+
+            fields = document.querySelectorAll(DOMstrings.inputDescription + ', ' + DOMstrings.inputValue);
+            fieldsArray = Array.prototype.slice.call(fields);
+
+            fieldsArray.forEach(function(current, index, array) {
+                current.value = "";
+            });
+        },
+
         getDOMstrings: function() {
             return DOMstrings;
         }
@@ -134,6 +145,9 @@ const controller = (function(budgetCtrl, UICtrl) {
 
         // Add the item to the UI
         UICtrl.addListItem(newItem, input.type);
+
+        // Clear the fields
+        UICtrl.clearFields();
 
         // Calculate the budget
 
