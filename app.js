@@ -280,7 +280,7 @@ const controller = (function(budgetCtrl, UICtrl) {
         // Read %s from budget controller
         let percentages = budgetCtrl.getPercentages();
         // Update the user interface
-        console.log(percentages);
+        UICtrl.displayPercentages(percentages);
     };
 
     let ctrlAddItem = function() {
