@@ -5,7 +5,10 @@ Users can add sources of income and expenses, and the app will calculate their t
 
 ### Media ###
 
-See media folder for images and video walkthrough of the app.
+See media folder for images.
+
+See walkthrough here: https://youtu.be/Te4o3zqyDqk
+
 
 ## Technical Talk ##
 
